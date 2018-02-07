@@ -1,6 +1,5 @@
 # 5.0.0, in development
 
-
 ## Removed
 * The `veneur.ssf.received_total` metric has been removed, as it is mostly redundant with `veneur.ssf.spans.received_total`, and was not reported consistently between packet and framed formats.
 * The `veneur.ssf.spans.received_total` metric now tracks all SSF data received, in either packet or framed format, whether or not a valid span was extracted.
@@ -14,6 +13,8 @@
   * `gc.mallocs_objects_total`
   * `gc.GCCPUFraction`
 
+## Added
+* `veneur` has new configuration options `forward_timeout`, `metrics_flush_timeout`, and `span_flush_timeout`. They control how long veneur will allow for each flush operation to take and report an error if the flush takes longer than expected. Thanks, [antifuchs](https://github.com/antifuchs)!
 
 ## Bugfixes
 * The `ignored-labels` and `ignored-metrics` flags for veneur-prometheus will filter no metrics or labels if no filter is specified. Thanks, [arjenvanderende](https://github.com/arjenvanderende)!
