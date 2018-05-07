@@ -5,6 +5,7 @@
 
 ## Bugfixes
 * Added a timeout to the Kafka sink, which prevents the Kafka client from blocking other span sinks. Thanks, [aditya](https://github.com/chimeracoder)!
+* When creating timer metrics from indicator spans, veneur no longer prefixes `indicator_span_timer_name` with the string `veneur.`. Thanks, [antifuchs](https://github.com/antifuchs)!
 
 ## Removed
 * The `veneur.ssf.received_total` metric has been removed, as it is mostly redundant with `veneur.ssf.spans.received_total`, and was not reported consistently between packet and framed formats.
